@@ -1,2 +1,13 @@
 # PBET
 phytocomplex bioactivity estimation tool. By uploading a list of molecules belonging to a phytocomplex into a single file, this tool provides an estimate of its biological activity
+phytocomplex bioactivity estimation tool
+Notebook Purpose:
+This notebook estimates the biological activity of a phytocomplex (mixture of plant compounds) by comparing its constituent molecules with a library of known compounds and their activities. Code Sections:
+Data Loading and Preparation:
+Loads parsley compounds from a user-provided SDF file. Downloads an approved drug library (Approveddrugslibrary.sdf) containing known activities and targets. Reads target information, CAS numbers, and bioactivities from separate Excel files. Fingerprint Calculation and Similarity Analysis:
+Calculates Morgan fingerprints for each molecule to represent their structural features. Compares the fingerprints of parsley compounds with those in the library using the Tanimoto similarity coefficient (a measure of structural similarity). Creates a DataFrame containing the similarity scores, target information, CAS numbers, and bioactivities for each comparison. Visualization and Analysis:
+Generates a scatter plot to visualize the distribution of Tanimoto similarity scores for each parsley compound. Creates a bar chart to show the frequency of different protein targets associated with the parsley compounds. Constructs a network visualization to depict the interactions between parsley compounds and potential target molecules. Generates a boxplot to analyze the distribution of Tanimoto similarity scores across different targets. Overall, the code effectively utilizes Python libraries like pandas, RDKit, matplotlib, and plotly to perform data manipulation, fingerprint analysis, and various visualizations.
+Additional Notes:
+The code assumes the required files (SDF files and Excel sheets) are uploaded to the same directory as the notebook. Error handling is implemented to gracefully handle potential issues like missing files or incorrect data formats. The comments throughout the code explain each step, making it easier to understand and modify. The following code requires the combined phytocomplex compound file. You can either copy and paste the compounds into a single text file using a text editor, naming it "parsley_combined_compounds" and placing it in the same directory as the notebook, or specify the path to the file. Additionally, the code requires the 'approveddruglibrary' library and three Excel files containing the target list, CAS numbers, and biological activity of the library compounds
+
+
